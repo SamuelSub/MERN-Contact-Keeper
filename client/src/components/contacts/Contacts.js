@@ -3,12 +3,12 @@ import contactContext from '../../context/contact/contactContext';
 import ContactItem from './ContactItem';
 
 const Contacts = () => {
-  const { contacts } = useContext(contactContext);
+  const { contacts, filtered } = useContext(contactContext);
   return (
     <Fragment>
-      {contacts.map(contact => (
-        <ContactItem key={contact.id} contact={contact}/>
-        ))}
+      {filtered ? 
+        filtered.map(contact => <ContactItem key={contact.id} contact={contact}/>)
+      : contacts.map(contact => <ContactItem key={contact.id} contact={contact}/>)}
     </Fragment>
   )
 }
