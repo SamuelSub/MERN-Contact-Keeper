@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useReducer } from 'react';
 import { v4 } from 'uuid';
 import contactContext from './contactContext';
