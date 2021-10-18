@@ -22,6 +22,7 @@ const FilterContacts = () => {
 
   return (
     <form>
+      <h2>Search Contacts</h2>
       <input ref={text} type="text" placeholder='Filter Contacts...' onChange={onChange}/>
     </form>
   )

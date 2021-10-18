@@ -8,7 +8,10 @@ import {
   FILTER_CONTACTS,
   CLEAR_FILTER,
   SET_ALERT,
-  REMOVE_ALERT
+  CONTACT_ERROR,
+  REMOVE_ALERT,
+  GET_CONTACTS,
+  CLEAR_CONTACTS
 } from '../types';
 
 export default (state, action) => {
@@ -48,6 +51,16 @@ export default (state, action) => {
           return contact.name.match(regex) || contact.email.match(regex);
         })
       }
+    case GET_CONTACTS:
+      return {
+        ...state,
+        contacts: action.payload
+      }
+    case CLEAR_CONTACTS:
+      return {
+        ...state,
+        contacts: null
+      }
     case CLEAR_FILTER:
       return {
         
@@ -60,6 +73,11 @@ export default (state, action) => {
       return {
         
       }       
+    case CONTACT_ERROR:
+      return {
+        ...state,
+        error: action.payload
+      }
     default:
       return state
   }

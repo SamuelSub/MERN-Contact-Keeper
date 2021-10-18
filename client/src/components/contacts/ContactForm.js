@@ -54,9 +54,9 @@ const ContactForm = () => {
   return (
     <form onSubmit={onSubmit}>
       <h2>{ContactContext.current ? 'Edit Contact' : 'Add Contact'}</h2>
-      <input type="text" name='name' placeholder='Name' value={name} onChange={onChange}/>
-      <input type="text" name='email' placeholder='Email' value={email} onChange={onChange}/>
-      <input type="text" name='phone' placeholder='Phone' value={phone} onChange={onChange}/>
+      <input type="text" name='name' placeholder='Name' required value={name} onChange={onChange}/>
+      <input type="text" name='email' placeholder='Email' required value={email} onChange={onChange}/>
+      <input type="text" name='phone' placeholder='Phone' required value={phone} onChange={onChange}/>
       <h5>Contact Type</h5>
       <input type="radio" name="type" value='personal' checked={type === 'personal'} onChange={onChange} /> Personal {' '}
       <input type="radio" name="type" value='professional' checked={type === 'professional'} onChange={onChange}/> Professional {' '}
